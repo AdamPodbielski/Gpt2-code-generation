@@ -1,0 +1,614 @@
+[
+    {
+        "instruction": "Write a Python function that checks if a linked list is a palindrome",
+        "input": "",
+        "output": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef is_palindrome(head):\n    vals = []\n    while head:\n        vals.append(head.val)\n        head = head.next\n    return vals == vals[::-1]",
+        "model_response": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef is_palindrome(head):\n    if not head:\n        return False\n    if head:\n        return head.val == val\n    if head.next:\n        return head.next == next\n    return head.val == val"
+    },
+    {
+        "instruction": "Define a Python function that adds two numbers represented as linked lists",
+        "input": "",
+        "output": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef add_two_numbers(l1, l2):\n    dummy = ListNode(0)\n    current = dummy\n    carry = 0\n    while l1 or l2 or carry:\n        v1 = l1.val if l1 else 0\n        v2 = l2.val if l2 else 0\n        total = v1 + v2 + carry\n        carry = total // 10\n        current.next = ListNode(total % 10)\n        current = current.next\n        l1 = l1.next if l1 else None\n        l2 = l2.next if l2 else None\n    return dummy.next",
+        "model_response": "class ListNode:\n    def __init__(self, val=0, next=None):\n       self.val = val\n       self.next = next\n\ndef add_two_numbers(l1, l2):\n    total = 0\n    current = l1\n    for _ in range(len(l1) - 1):\n       if l1[_] == l2[_]:\n          total += 1\n       l1[_], l2[_] = l1[_], l2[_]\n       current = l1\n    return total"
+    },
+    {
+        "instruction": "Write a Python function that prints all numbers from 1 to 1",
+        "input": "",
+        "output": "def print_numbers():\n    for i in range(1, 2):\n        print(i)",
+        "model_response": ",535\n\n\ndef print_numbers():\n    for i in range(1, 1, 5):\n        print(i)"
+    },
+    {
+        "instruction": "Write a Python function that searches for the value 19 in a binary search tree",
+        "input": "",
+        "output": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef bst_search(root, target=19):\n    if not root or root.val == target:\n        return root\n    if target < root.val:\n        return bst_search(root.left, target)\n    return bst_search(root.right, target)",
+        "model_response": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n       self.val = val\n       self.left = left\n       self.right = right\n\ndef bst_search(root, target=19):\n    if not root:\n       return []\n    if not root.left and not root.right:\n       return [str] * root.val\n    if target < root.val:\n       return [int] * root.val\n    return target"
+    },
+    {
+        "instruction": "Write a Python function that solves climbing stairs for 24 steps",
+        "input": "",
+        "output": "def climb_stairs(n=24):\n    if n <= 2:\n        return n\n    a, b = 1, 2\n    for _ in range(3, n + 1):\n        a, b = b, a + b\n    return b",
+        "model_response": "def climb_stairs(n=24):\n    if n <= 2:\n        return n\n    a, b = 1, 2\n    for _ in range(3, n + 1):\n        a, b = b, a + b\n    return b"
+    },
+    {
+        "instruction": "Write a Python function that solves climbing stairs for 14 steps",
+        "input": "",
+        "output": "def climb_stairs(n=14):\n    if n <= 2:\n        return n\n    a, b = 1, 2\n    for _ in range(3, n + 1):\n        a, b = b, a + b\n    return b",
+        "model_response": "def climb_stairs(n=14):\n    if n <= 2:\n        return n\n    a, b = 1, 2\n    for _ in range(3, n + 1):\n        a, b = b, a + b\n    return b"
+    },
+    {
+        "instruction": "Write a Python function that prints all numbers from 1 to 33",
+        "input": "",
+        "output": "def print_numbers():\n    for i in range(1, 34):\n        print(i)",
+        "model_response": "def print_numbers():\n    for i in range(1, 34):\n        print(i)"
+    },
+    {
+        "instruction": "Define a Python function that finds the key with the maximum value in a dictionary",
+        "input": "",
+        "output": "def max_value_key(d):\n    return max(d, key=d.get)",
+        "model_response": "def find_max(d):\n    return max(d)"
+    },
+    {
+        "instruction": "Write a Python function that prints all numbers from 1 to 10",
+        "input": "",
+        "output": "def print_numbers():\n    for i in range(1, 11):\n        print(i)",
+        "model_response": "def print_numbers():\n    for i in range(1, 11):\n        print(i)"
+    },
+    {
+        "instruction": "Implement a Python function that generates combinations of length k",
+        "input": "",
+        "output": "def combinations(lst, k):\n    if k == 0:\n        return [[]]\n    if len(lst) < k:\n        return []\n    return [[lst[0]] + c for c in combinations(lst[1:], k - 1)] + combinations(lst[1:], k)",
+        "model_response": "def combinations(lk):\n    combinations = {}\n    for i in range(len(lk) - 1, -1, -1, -1, i):\n       combinations[i] = i\n    return combinations"
+    },
+    {
+        "instruction": "Write a Python function to gets the value at a given index in a linked list",
+        "input": "",
+        "output": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef get_at(head, index):\n    current = head\n    for _ in range(index):\n        if not current:\n            return None\n        current = current.next\n    return current.val if current else None",
+        "model_response": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef get_at(head, index):\n    current = head\n    for _ in range(index):\n        if not current:\n            return None\n        current = current.next\n        current = head\n    return current.val"
+    },
+    {
+        "instruction": "Write a Python function that prints all numbers from 1 to 5",
+        "input": "",
+        "output": "def print_numbers():\n    for i in range(1, 6):\n        print(i)",
+        "model_response": "def print_numbers():\n    for i in range(1, 6):\n        print(i)"
+    },
+    {
+        "instruction": "Write a Python function that sorts the list [91, 57, 57, 68, 67] using insertion sort",
+        "input": "",
+        "output": "def insertion_sort(lst):\n    for i in range(1, len(lst)):\n        key = lst[i]\n        j = i - 1\n        while j >= 0 and lst[j] > key:\n            lst[j + 1] = lst[j]\n            j -= 1\n        lst[j + 1] = key\n    return lst",
+        "model_response": "def insertion_sort(lst):\n    for i in range(1, len(lst)):\n        key = lst[i]\n        j = i - 1\n        while j >= 0 and lst[j] > key:\n           lst[j + 1] = lst[j]\n           j -= 1\n        lst[j + 1] = key\n    return lst"
+    },
+    {
+        "instruction": "Write a Python function to computes the edit distance between two strings",
+        "input": "",
+        "output": "def edit_distance(s1, s2):\n    m, n = len(s1), len(s2)\n    dp = [[0] * (n + 1) for _ in range(m + 1)]\n    for i in range(m + 1):\n        dp[i][0] = i\n    for j in range(n + 1):\n        dp[0][j] = j\n    for i in range(1, m + 1):\n        for j in range(1, n + 1):\n            if s1[i-1] == s2[j-1]:\n                dp[i][j] = dp[i-1][j-1]\n            else:\n                dp[i][j] = 1 + min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1])\n    return dp[m][n]",
+        "model_response": "def edit_distance(lst1, lst2):\n    edit_distance(lst1, lst2)\n    edit_distance(lst2, lst1)\n    edit_distance(lst2, lst2)\n    return edit_distance(lst1) + edit_distance(lst2)"
+    },
+    {
+        "instruction": "Write a Python function that performs BFS on a graph starting from node 'D'",
+        "input": "",
+        "output": "def bfs(graph, start='D'):\n    visited = set([start])\n    result = []\n    queue = [start]\n    while queue:\n        node = queue.pop(0)\n        result.append(node)\n        for neighbor in graph[node]:\n            if neighbor not in visited:\n                visited.add(neighbor)\n                queue.append(neighbor)\n    return result",
+        "model_response": "def bfs(graph, start='D'):\n    visited = set()\n    result = []\n    queue = [start]\n    while queue:\n       node = queue.pop(0)\n       result.append(node)\n       for neighbor in graph[node]:\n           if neighbor not in visited:\n               visited.add(neighbor)\n               queue.append(neighbor)\n    return result"
+    },
+    {
+        "instruction": "Create a Python function that generates the collatz sequence",
+        "input": "",
+        "output": "def collatz(n):\n    sequence = [n]\n    while n != 1:\n        n = n // 2 if n % 2 == 0 else 3 * n + 1\n        sequence.append(n)\n    return sequence",
+        "model_response": "def collatz(n):\n    sequence = [n]\n    while n:\n        n = n\n       sequence[n] = sequence[n] + collatz(n)\n        n //= n\n    return sequence"
+    },
+    {
+        "instruction": "Write a Python function that computes the edit distance between two strings",
+        "input": "",
+        "output": "def edit_distance(s1, s2):\n    m, n = len(s1), len(s2)\n    dp = [[0] * (n + 1) for _ in range(m + 1)]\n    for i in range(m + 1):\n        dp[i][0] = i\n    for j in range(n + 1):\n        dp[0][j] = j\n    for i in range(1, m + 1):\n        for j in range(1, n + 1):\n            if s1[i-1] == s2[j-1]:\n                dp[i][j] = dp[i-1][j-1]\n            else:\n                dp[i][j] = 1 + min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1])\n    return dp[m][n]",
+        "model_response": "def edit_distance(lst1, lst2):\n    edit_distance(lst1, lst2)\n    return edit_distance(lst2)"
+    },
+    {
+        "instruction": "Write a Python function to generates the collatz sequence",
+        "input": "",
+        "output": "def collatz(n):\n    sequence = [n]\n    while n != 1:\n        n = n // 2 if n % 2 == 0 else 3 * n + 1\n        sequence.append(n)\n    return sequence",
+        "model_response": "def collatz(n):\n    sequence = [n]\n    while n != 1:\n        n = n\n        sequence[n] = sequence[n] + [n]\n        n //= n\n    return sequence"
+    },
+    {
+        "instruction": "Write a Python function to checks if two strings are anagrams",
+        "input": "",
+        "output": "def are_anagrams(s1, s2):\n    return sorted(s1.lower()) == sorted(s2.lower())",
+        "model_response": "def is_anagrams(s1, s2):\n    return sorted(s1.lower()) == sorted(s2.lower())"
+    },
+    {
+        "instruction": "Write a Python function that checks if 12 is prime",
+        "input": "",
+        "output": "def is_prime(n=12):\n    if n < 2:\n        return False\n    for i in range(2, int(n**0.5) + 1):\n        if n % i == 0:\n            return False\n    return True",
+        "model_response": "def is_prime(n=12):\n    if n < 2:\n        return False\n    for i in range(2, int(n**0.5) + 1):\n        if n % i == 0:\n           return False\n    return True"
+    },
+    {
+        "instruction": "Write a Python function that sorts the list [22, 93, 57, 6, 53, 47, 87, 93] using merge sort",
+        "input": "",
+        "output": "def merge_sort(lst):\n    if len(lst) <= 1:\n        return lst\n    mid = len(lst) // 2\n    left = merge_sort(lst[:mid])\n    right = merge_sort(lst[mid:])\n    result = []\n    i = j = 0\n    while i < len(left) and j < len(right):\n        if left[i] <= right[j]:\n            result.append(left[i])\n            i += 1\n        else:\n            result.append(right[j])\n            j += 1\n    result.extend(left[i:])\n    result.extend(right[j:])\n    return result",
+        "model_response": "def merge_sort(lst):\n    if len(lst) <= 1:\n        return lst\n    mid = len(lst) // 2\n    left = merge_sort(lst[:mid])\n    right = merge_sort(lst[mid:])\n    result = []\n    i = j = 0\n    while i < len(left) and j < len(right):\n        if left[i] <= right[j]:\n           result.append(left[i])\n           i += 1\n        else:\n            result.append(right[j])\n            j += 1\n    result.extend(left[i:])\n    result.extend(right[j:])\n    return result"
+    },
+    {
+        "instruction": "Write a Python function that prints all numbers from 1 to 56",
+        "input": "",
+        "output": "def print_numbers():\n    for i in range(1, 57):\n        print(i)",
+        "model_response": "def print_numbers():\n    for i in range(1, 57):\n        print(i)"
+    },
+    {
+        "instruction": "Implement a Python function that finds the sum of all values in a linked list",
+        "input": "",
+        "output": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef sum_values(head):\n    total = 0\n    while head:\n        total += head.val\n        head = head.next\n    return total",
+        "model_response": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef sum_values(head):\n    total = 0\n    current = head\n    while current:\n        if current.val == val:\n           total += current.val\n        current = current.next\n        current = head\n    current = head\n    current = current.next\n    current = head\n    current = head\n    return total"
+    },
+    {
+        "instruction": "Write a Python function that prints a greeting to Henry",
+        "input": "",
+        "output": "def greet():\n    print('Hello, Henry!')",
+        "model_response": "def greet():\n    print('Hello, Henry!')"
+    },
+    {
+        "instruction": "Write a Python function that prints all numbers from 1 to 20",
+        "input": "",
+        "output": "def print_numbers():\n    for i in range(1, 21):\n        print(i)",
+        "model_response": "def print_numbers():\n    for i in range(1, 21):\n        print(i)"
+    },
+    {
+        "instruction": "Write a Python function that sorts the list [37, 31, 39, 16] using bubble sort",
+        "input": "",
+        "output": "def bubble_sort(lst):\n    n = len(lst)\n    for i in range(n):\n        for j in range(n - i - 1):\n            if lst[j] > lst[j + 1]:\n                lst[j], lst[j + 1] = lst[j + 1], lst[j]\n    return lst",
+        "model_response": "def bubble_sort(lst):\n    n = len(lst)\n    for i in range(n):\n        swapped = False\n        for j in range(n - i):\n            if lst[j] > lst[j + 1]:\n               lst[j], lst[j + 1] = lst[j + 1], lst[j]\n                lst[j], lst[j] = swapped\n    return lst"
+    },
+    {
+        "instruction": "Write a Python function to checks if a number is prime",
+        "input": "",
+        "output": "def is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n**0.5) + 1):\n        if n % i == 0:\n            return False\n    return True",
+        "model_response": "def is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n**0.5) + 1):\n        if n % i == 0:\n            return False\n    return True"
+    },
+    {
+        "instruction": "Write a Python function that subtracts 2 from 59",
+        "input": "",
+        "output": "def subtract():\n    return 59 - 2",
+        "model_response": "def subtract():\n    return 59 - 2"
+    },
+    {
+        "instruction": "Write a Python function that solves climbing stairs for 19 steps",
+        "input": "",
+        "output": "def climb_stairs(n=19):\n    if n <= 2:\n        return n\n    a, b = 1, 2\n    for _ in range(3, n + 1):\n        a, b = b, a + b\n    return b",
+        "model_response": "def climb_stairs(n=19):\n    if n <= 2:\n        return n\n    a, b = 1, 2\n    for _ in range(3, n + 1):\n        a, b = b, a + b\n    return b"
+    },
+    {
+        "instruction": "Define a Python function that returns the nth Fibonacci number",
+        "input": "",
+        "output": "def fibonacci(n):\n    if n <= 1:\n        return n\n    a, b = 0, 1\n    for _ in range(2, n + 1):\n        a, b = b, a + b\n    return b",
+        "model_response": "def fibonacci(n):\n    if n <= 1:\n        return n\n    a, b = 0, 1\n    for _ in range(2, n + 1):\n        a, b = b, a + b\n    return b"
+    },
+    {
+        "instruction": "Write a Python function that finds the maximum value in [52, 17, 98, 48, 66, 72]",
+        "input": "",
+        "output": "def find_max(lst):\n    max_val = lst[0]\n    for item in lst[1:]:\n        if item > max_val:\n            max_val = item\n    return max_val",
+        "model_response": "def find_max(lst):\n    max_val = lst[0]\n    for item in lst[1:]:\n        if item > max_val:\n           max_val = item\n    return max_val"
+    },
+    {
+        "instruction": "Create a Python function that checks if two binary trees are identical",
+        "input": "",
+        "output": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef is_same(p, q):\n    if not p and not q:\n        return True\n    if not p or not q:\n        return False\n    return p.val == q.val and is_same(p.left, q.left) and is_same(p.right, q.right)",
+        "model_response": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n       self.val = val\n       self.left = left\n       self.right = right\n\ndef is_same(p, q):\n    if not p and not q:\n        return True\n    if not p and not q:\n        return False\n    if not p or not q:\n        return p.val == q.val\n    return p.left == q.left or p.right == q.right"
+    },
+    {
+        "instruction": "Write a Python function that finds the maximum value in [5, 78, 20, 87, 58, 48, 48, 57]",
+        "input": "",
+        "output": "def find_max(lst):\n    max_val = lst[0]\n    for item in lst[1:]:\n        if item > max_val:\n            max_val = item\n    return max_val",
+        "model_response": "def find_max(lst):\n    max_val = lst[0]\n    for item in lst[1:]:\n        if item > max_val:\n           max_val = item\n    return max_val"
+    },
+    {
+        "instruction": "Create a Python function that performs depth-first search on a graph recursively",
+        "input": "",
+        "output": "def dfs_recursive(graph, node, visited=None):\n    if visited is None:\n        visited = set()\n    visited.add(node)\n    result = [node]\n    for neighbor in graph[node]:\n        if neighbor not in visited:\n            result.extend(dfs_recursive(graph, neighbor, visited))\n    return result",
+        "model_response": "def dfs(graph, node):\n    visited = set()\n    result = []\n    stack = [node]\n    while stack:\n        node = stack.pop()\n        if node not in visited:\n           visited.add(node)\n           result.append(node)\n           stack.extend(graph.get(node, []))\n    return result"
+    },
+    {
+        "instruction": "Write a Python function that solves climbing stairs for 28 steps",
+        "input": "",
+        "output": "def climb_stairs(n=28):\n    if n <= 2:\n        return n\n    a, b = 1, 2\n    for _ in range(3, n + 1):\n        a, b = b, a + b\n    return b",
+        "model_response": "def climb_stairs(n=28):\n    if n <= 2:\n        return n\n    a, b = 1, 2\n    for _ in range(3, n + 1):\n        a, b = b, a + b\n    return b"
+    },
+    {
+        "instruction": "Write a Python function that creates a linked list from a Python list",
+        "input": "",
+        "output": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef from_list(values):\n    dummy = ListNode(0)\n    current = dummy\n    for v in values:\n        current.next = ListNode(v)\n        current = current.next\n    return dummy.next",
+        "model_response": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef from_list(values):\n    count = 0\n    nodes = set(values)\n    while nodes:\n        node in nodes:\n        if node.val == val:\n           count += 1\n           if node.next:\n               node.next = node.next\n            else:\n               node = node.next\n    return count"
+    },
+    {
+        "instruction": "Create a Python function that implements linear search",
+        "input": "",
+        "output": "def linear_search(lst, target):\n    for i, item in enumerate(lst):\n        if item == target:\n            return i\n    return -1",
+        "model_response": "def linear_search(lst):\n    for i in range(len(lst) - 1, -1, -1):\n       if lst[i] == lst[i+1]:\n           return lst[i]\n            break\n    return -1"
+    },
+    {
+        "instruction": "Create a Python function that checks if a linked list is empty",
+        "input": "",
+        "output": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef is_empty(head):\n    return head is None",
+        "model_response": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef is_empty(head):\n    count = 0\n    while head:\n        if head.val == 0:\n           count += 1\n        head = head.next\n    return head is empty"
+    },
+    {
+        "instruction": "Write a Python function that prints a greeting to Diana",
+        "input": "",
+        "output": "def greet():\n    print('Hello, Diana!')",
+        "model_response": "def greet():\n    print('Hello, Diana!')"
+    },
+    {
+        "instruction": "Write a Python function that prints all numbers from 1 to 58",
+        "input": "",
+        "output": "def print_numbers():\n    for i in range(1, 59):\n        print(i)",
+        "model_response": "def print_numbers():\n    for i in range(1, 59):\n        print(i)"
+    },
+    {
+        "instruction": "Write a Python function that searches for the value 27 in a binary search tree",
+        "input": "",
+        "output": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef bst_search(root, target=27):\n    if not root or root.val == target:\n        return root\n    if target < root.val:\n        return bst_search(root.left, target)\n    return bst_search(root.right, target)",
+        "model_response": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef bst_search(root, target=27):\n    if not root:\n        return\n    if not root.left and not root.right:\n        return\n    if not root.right and not target:\n        return\n    return target"
+    },
+    {
+        "instruction": "Write a Python function that multiplies 7 and 22",
+        "input": "",
+        "output": "def multiply():\n    return 7 * 22",
+        "model_response": "def multiply():\n    return 7 * 22"
+    },
+    {
+        "instruction": "Write a Python function that multiplies 14 and 9",
+        "input": "",
+        "output": "def multiply():\n    return 14 * 9",
+        "model_response": "def multiply():\n    return 14 * 9"
+    },
+    {
+        "instruction": "Create a Python function that computes the edit distance between two strings",
+        "input": "",
+        "output": "def edit_distance(s1, s2):\n    m, n = len(s1), len(s2)\n    dp = [[0] * (n + 1) for _ in range(m + 1)]\n    for i in range(m + 1):\n        dp[i][0] = i\n    for j in range(n + 1):\n        dp[0][j] = j\n    for i in range(1, m + 1):\n        for j in range(1, n + 1):\n            if s1[i-1] == s2[j-1]:\n                dp[i][j] = dp[i-1][j-1]\n            else:\n                dp[i][j] = 1 + min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1])\n    return dp[m][n]",
+        "model_response": "def edit_distance(lst1, lst2):\n    edit_distance(lst1, lst2)\n    for i in range(len(lst1) - len(lst2):\n        if lst1[i] <= lst2[i]:\n            i = i + 1\n        lst2[i] = lst1[i]\n        lst2[i] = lst2[i]\n    return edit_distance(lst1, lst2)"
+    },
+    {
+        "instruction": "Write a Python function that finds all duplicate elements in a list",
+        "input": "",
+        "output": "def find_duplicates(lst):\n    from collections import Counter\n    counts = Counter(lst)\n    return [item for item, c in counts.items() if c > 1]",
+        "model_response": "def find_duplicates(lst):\n    seen = {}\n    for item in lst:\n        if item not in seen:\n           seen.append(item)\n           seen = item\n    return seen"
+    },
+    {
+        "instruction": "Write a Python function that checks if 'hello' is a palindrome",
+        "input": "",
+        "output": "def is_palindrome(s='hello'):\n    return s == s[::-1]",
+        "model_response": "def is_palindrome(s='hello'):\n    return s == s[::-1]"
+    },
+    {
+        "instruction": "Write a Python function that multiplies 51 and 23",
+        "input": "",
+        "output": "def multiply():\n    return 51 * 23",
+        "model_response": "def multiply():\n    return 51 * 23"
+    },
+    {
+        "instruction": "Create a Python function that capitalizes each word in a string",
+        "input": "",
+        "output": "def capitalize_words(s):\n    return ' '.join(word.capitalize() for word in s.split())",
+        "model_response": "def capitalize_words(s):\n    return ' '.join(word.capitalize() for word in s.split())"
+    },
+    {
+        "instruction": "Implement a Python function that rotates a list to the right by k positions",
+        "input": "",
+        "output": "def rotate_right(lst, k):\n    if not lst:\n        return lst\n    k = k % len(lst)\n    return lst[-k:] + lst[:-k]",
+        "model_response": "def rotate_right(lst):\n    k = k % k\n    if k == 0:\n        return lst\n    k += 1\n    while k < k % k:\n        k = k % k\n        lst = lst[k]\n        k = k % k\n        lst[k] = lst[k]\n        k = k % k\n    return lst"
+    },
+    {
+        "instruction": "Write a Python function to returns all root-to-leaf paths in a binary tree",
+        "input": "",
+        "output": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef all_paths(root):\n    if not root:\n        return []\n    if not root.left and not root.right:\n        return [str(root.val)]\n    paths = []\n    for child in [root.left, root.right]:\n        for path in all_paths(child):\n            paths.append(str(root.val) + '->' + path)\n    return paths",
+        "model_response": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n       self.val = val\n       self.left = left\n       self.right = right\n\ndef all_paths(root):\n    if not root:\n       return []\n    paths = []\n    queue = [str(root.val)]\n    while queue:\n        node = queue.pop(0)\n        if node not in paths:\n            paths.append(node)\n            queue[0] = []\n            for path in paths:\n                 if node not in paths:"
+    },
+    {
+        "instruction": "Write a Python function that prints all numbers from 1 to 50",
+        "input": "",
+        "output": "def print_numbers():\n    for i in range(1, 51):\n        print(i)",
+        "model_response": "def print_numbers():\n    for i in range(1, 51):\n        print(i)"
+    },
+    {
+        "instruction": "Define a Python function that finds the minimum value node in a BST",
+        "input": "",
+        "output": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef bst_min(root):\n    while root.left:\n        root = root.left\n    return root.val",
+        "model_response": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n       self.val = val\n       self.left = left\n       self.right = right\n\ndef bst_min(root, target):\n    if not root:\n       return float('inf')\n    if not root.left and not root.right:\n       return float('inf')\n    if target is None:\n       target = float('inf')\n    return target"
+    },
+    {
+        "instruction": "Write a Python function that returns the sum of 40 and 6",
+        "input": "",
+        "output": "def add_numbers(a=40, b=6):\n    return a + b",
+        "model_response": "def add_numbers(a=40, b=6):\n    return a + b"
+    },
+    {
+        "instruction": "Write a Python function that checks if a linked list has at least 6 nodes",
+        "input": "",
+        "output": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef has_at_least(head, n=6):\n    count = 0\n    while head and count < n:\n        count += 1\n        head = head.next\n    return count == n",
+        "model_response": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef has_at_least(head, n=6):\n    count = 0\n    node = head\n    while node and count < n:\n        node = node.next\n        if node.val == n:\n            count += 1\n            next = node\n        if node.next == next:\n            node = next\n    return count == n"
+    },
+    {
+        "instruction": "Write a Python function that checks if 'world' is a palindrome",
+        "input": "",
+        "output": "def is_palindrome(s='world'):\n    return s == s[::-1]",
+        "model_response": "def is_palindrome(s='world'):\n    return s == s[::-1]"
+    },
+    {
+        "instruction": "Create a Python function that implements selection sort",
+        "input": "",
+        "output": "def selection_sort(lst):\n    n = len(lst)\n    for i in range(n):\n        min_idx = i\n        for j in range(i + 1, n):\n            if lst[j] < lst[min_idx]:\n                min_idx = j\n        lst[i], lst[min_idx] = lst[min_idx], lst[i]\n    return lst",
+        "model_response": "def selection_sort(lst):\n    n = len(lst)\n    for i in range(n):\n        swapped = False\n        for j in range(n - i):\n            if lst[j] > lst[j + 1]:\n               lst[j], lst[j + 1] = lst[j + 1], lst[j]\n                swapped = True\n        if not swapped:\n            break\n    return lst"
+    },
+    {
+        "instruction": "Write a Python function that reverses a linked list recursively",
+        "input": "",
+        "output": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef reverse_recursive(head):\n    if not head or not head.next:\n        return head\n    new_head = reverse_recursive(head.next)\n    head.next.next = head\n    head.next = None\n    return new_head",
+        "model_response": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef reverse_recursive(head):\n    count = 0\n    node = head\n    while node and node.next:\n        node = node.next\n        node.next = head\n        current = node\n        prev = head\n        current = current.next\n        prev = current\n        current = current\n    return head"
+    },
+    {
+        "instruction": "Write a Python function that searches for the value 17 in a binary search tree",
+        "input": "",
+        "output": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef bst_search(root, target=17):\n    if not root or root.val == target:\n        return root\n    if target < root.val:\n        return bst_search(root.left, target)\n    return bst_search(root.right, target)",
+        "model_response": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n       self.val = val\n       self.left = left\n       self.right = right\n\ndef bst_search(root, target=17):\n    if not root:\n       return []\n    if not root.left and not root.right:\n       return [str]\n    if target in root.val:\n       return [int]\n    if target in root.right:\n       return [float]\n    return bst_search(root.left, target) + bst_search(root.right, target)"
+    },
+    {
+        "instruction": "Implement a Python function that checks if an undirected graph is connected",
+        "input": "",
+        "output": "def is_connected(graph):\n    if not graph:\n        return True\n    start = next(iter(graph))\n    visited = set()\n    stack = [start]\n    while stack:\n        node = stack.pop()\n        if node not in visited:\n            visited.add(node)\n            stack.extend(graph[node])\n    return len(visited) == len(graph)",
+        "model_response": "def is_connected(node):\n    if not node:\n        return False\n    if node in connected:\n        connected = True\n    if node not in connected:\n        return False\n    if node in connected:\n        node.is_connected(node)\n    return True"
+    },
+    {
+        "instruction": "Write a Python function that returns the sum of 50 and 18",
+        "input": "",
+        "output": "def add_numbers(a=50, b=18):\n    return a + b",
+        "model_response": "def add_numbers(a=50, b=18):\n    return a + b"
+    },
+    {
+        "instruction": "Write a Python function that finds the minimum value in [11, 33, 26, 82, 71, 36]",
+        "input": "",
+        "output": "def find_min(lst):\n    min_val = lst[0]\n    for item in lst[1:]:\n        if item < min_val:\n            min_val = item\n    return min_val",
+        "model_response": "def find_min(lst):\n    min_val = lst[0]\n    for item in lst[1:]:\n        if item > min_val:\n           min_val = item\n    return min_val"
+    },
+    {
+        "instruction": "Write a Python function to reverses a linked list recursively",
+        "input": "",
+        "output": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef reverse_recursive(head):\n    if not head or not head.next:\n        return head\n    new_head = reverse_recursive(head.next)\n    head.next.next = head\n    head.next = None\n    return new_head",
+        "model_response": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef reverse_recursive(head):\n    count = 0\n    node = head\n    while node and node.next:\n        node = node.next\n        node = node.next\n        node = head\n    return node"
+    },
+    {
+        "instruction": "Write a Python function that chunks a list into sublists of size n",
+        "input": "",
+        "output": "def chunk(lst, n):\n    return [lst[i:i + n] for i in range(0, len(lst), n)]",
+        "model_response": "def chunk(lst):\n    return sorted(lst) + [lst[i] for i in range(n)]"
+    },
+    {
+        "instruction": "Create a Python function that finds the kth largest element in a list",
+        "input": "",
+        "output": "def kth_largest(lst, k):\n    return sorted(lst, reverse=True)[k - 1]",
+        "model_response": "def kth_largest(lst):\n    return sorted(lst, reverse=True)[kth]"
+    },
+    {
+        "instruction": "Implement a Python function that converts a linked list to a Python list",
+        "input": "",
+        "output": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef to_list(head):\n    result = []\n    while head:\n        result.append(head.val)\n        head = head.next\n    return result",
+        "model_response": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef to_list(head):\n    count = 0\n    while head:\n        if head.val == val:\n           count += 1\n        head = head.next\n    return head"
+    },
+    {
+        "instruction": "Define a Python function that performs breadth-first search on a graph",
+        "input": "",
+        "output": "def bfs(graph, start):\n    visited = set([start])\n    result = []\n    queue = [start]\n    while queue:\n        node = queue.pop(0)\n        result.append(node)\n        for neighbor in graph[node]:\n            if neighbor not in visited:\n                visited.add(neighbor)\n                queue.append(neighbor)\n    return result",
+        "model_response": "def bfs(graph, start):\n    visited = set()\n    result = []\n    queue = [start]\n    while queue:\n        node = queue.pop(0)\n        result.append(node)\n        for neighbor in graph[node]:\n            if neighbor not in visited:\n                visited.add(neighbor)\n               queue.append(neighbor)\n    return result"
+    },
+    {
+        "instruction": "Write a Python function that sorts the list [25, 29, 18, 20, 10, 38, 13] using quick sort",
+        "input": "",
+        "output": "def quick_sort(lst):\n    if len(lst) <= 1:\n        return lst\n    pivot = lst[len(lst) // 2]\n    return quick_sort([x for x in lst if x < pivot]) + [x for x in lst if x == pivot] + quick_sort([x for x in lst if x > pivot])",
+        "model_response": "def quick_sort(lst):\n    if len(lst) <= 1:\n        return lst\n    pivot = lst[len(lst) // 2]\n    return quick_sort([x for x in lst if x < pivot]) + [x for x in lst if x == pivot] + quick_sort([x for x in lst if x > pivot])"
+    },
+    {
+        "instruction": "Write a Python function to inserts a value into a binary search tree",
+        "input": "",
+        "output": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef bst_insert(root, val):\n    if not root:\n        return TreeNode(val)\n    if val < root.val:\n        root.left = bst_insert(root.left, val)\n    else:\n        root.right = bst_insert(root.right, val)\n    return root",
+        "model_response": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n       self.val = val\n       self.left = left\n       self.right = right\n\ndef bst_insert(root, val):\n    if not root:\n       return root.val\n    if val < root.val:\n       root.left = bst_insert(root.left, val)\n    else:\n       root.right = bst_insert(root.right, val)\n    return root"
+    },
+    {
+        "instruction": "Define a Python function that rotates a linked list to the right by k places",
+        "input": "",
+        "output": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef rotate_right(head, k):\n    if not head or not head.next:\n        return head\n    length = 1\n    tail = head\n    while tail.next:\n        tail = tail.next\n        length += 1\n    k = k % length\n    if k == 0:\n        return head\n    tail.next = head\n    steps = length - k\n    new_tail = head\n    for _ in range(steps - 1):\n        new_tail = new_tail.next\n    new_head = new_tail.next\n    new_tail.next = None\n    return new_head",
+        "model_response": "class ListNode:\n    def __init__(self, val=0, next=None):\n       self.val = val\n       self.next = next\n\ndef rotate_right(head, k):\n    if not head:\n       return head\n    head = head.next\n    k = k % 2\n    return head.next"
+    },
+    {
+        "instruction": "Write a Python function that counts the vowels in 'racecar'",
+        "input": "",
+        "output": "def count_vowels(s='racecar'):\n    return sum(1 for c in s.lower() if c in 'aeiou')",
+        "model_response": "def count_vowels(s='racecar'):\n    return sum(1 for c in s.lower() if c in 'aeiou')"
+    },
+    {
+        "instruction": "Write a Python function that prints a greeting to Bob",
+        "input": "",
+        "output": "def greet():\n    print('Hello, Bob!')",
+        "model_response": "def greet():\n    print('Hello, Bob!')"
+    },
+    {
+        "instruction": "Write a Python function to chunks a list into sublists of size n",
+        "input": "",
+        "output": "def chunk(lst, n):\n    return [lst[i:i + n] for i in range(0, len(lst), n)]",
+        "model_response": "def chunks(lst):\n    return sorted(lst) + [lst[i] for i in range(n)]"
+    },
+    {
+        "instruction": "Write a Python function to finds the longest word in a sentence",
+        "input": "",
+        "output": "def longest_word(s):\n    return max(s.split(), key=len)",
+        "model_response": "def longest_word(s):\n    word_len = len(s.split())\n    count = 0\n    for _ in range(word_len):\n        if s[_] == w:\n            count += 1\n        else:\n            break\n    return count"
+    },
+    {
+        "instruction": "Define a Python function that computes the factorial of a number",
+        "input": "",
+        "output": "def factorial(n):\n    result = 1\n    for i in range(1, n + 1):\n        result *= i\n    return result",
+        "model_response": "def factorial(n):\n    result = 1\n    for i in range(1, n):\n        result *= i\n    return result"
+    },
+    {
+        "instruction": "Define a Python function that reverses a list without using slicing",
+        "input": "",
+        "output": "def reverse_list(lst):\n    result = []\n    for i in range(len(lst) - 1, -1, -1):\n        result.append(lst[i])\n    return result",
+        "model_response": "def reverse_list(lst):\n    return lst[::-1]"
+    },
+    {
+        "instruction": "Define a Python function that detects a cycle in a directed graph",
+        "input": "",
+        "output": "def has_cycle(graph):\n    visited = set()\n    rec_stack = set()\n    def dfs(node):\n        visited.add(node)\n        rec_stack.add(node)\n        for neighbor in graph.get(node, []):\n            if neighbor not in visited:\n                if dfs(neighbor):\n                    return True\n            elif neighbor in rec_stack:\n                return True\n        rec_stack.remove(node)\n        return False\n    for node in graph:\n        if node not in visited:\n            if dfs(node):\n                return True\n    return False",
+        "model_response": "def has_cycle(graph):\n    visited = set()\n    queue = [graph.get(0, visited)]\n    while queue:\n        node = queue.pop(0)\n        for neighbor in graph[node]:\n            if neighbor not in visited:\n                visited.add(neighbor)\n               queue.append(neighbor)\n    return True"
+    },
+    {
+        "instruction": "Write a Python function that returns the sum of 38 and 25",
+        "input": "",
+        "output": "def add_numbers(a=38, b=25):\n    return a + b",
+        "model_response": "def add_numbers(a=38, b=25):\n    return a + b"
+    },
+    {
+        "instruction": "Write a Python function that multiplies 41 and 9",
+        "input": "",
+        "output": "def multiply():\n    return 41 * 9",
+        "model_response": "def multiply():\n    return 41 * 9"
+    },
+    {
+        "instruction": "Define a Python function that implements binary search",
+        "input": "",
+        "output": "def binary_search(lst, target):\n    left, right = 0, len(lst) - 1\n    while left <= right:\n        mid = (left + right) // 2\n        if lst[mid] == target:\n            return mid\n        elif lst[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1",
+        "model_response": "def binary_search(lst, target):\n    left, right = 0, len(lst) - 1\n    while left <= right:\n        mid = (left + right) // 2\n        if lst[mid] == target:\n            return mid\n        elif lst[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1"
+    },
+    {
+        "instruction": "Write a Python function that returns the sum of 49 and 17",
+        "input": "",
+        "output": "def add_numbers(a=49, b=17):\n    return a + b",
+        "model_response": "def add_numbers(a=49, b=17):\n    return a + b"
+    },
+    {
+        "instruction": "Implement a Python function that reverses a string",
+        "input": "",
+        "output": "def reverse_string(s):\n    return s[::-1]",
+        "model_response": "def reverse_string(s):\n    return s[::-1]"
+    },
+    {
+        "instruction": "Create a Python function that reverses a list without using slicing",
+        "input": "",
+        "output": "def reverse_list(lst):\n    result = []\n    for i in range(len(lst) - 1, -1, -1):\n        result.append(lst[i])\n    return result",
+        "model_response": "def reverse_list(lst):\n    return lst[::-1]"
+    },
+    {
+        "instruction": "Create a Python function that finds the number of islands in a grid",
+        "input": "",
+        "output": "def num_islands(grid):\n    if not grid:\n        return 0\n    rows, cols = len(grid), len(grid[0])\n    count = 0\n    def dfs(r, c):\n        if r < 0 or r >= rows or c < 0 or c >= cols or grid[r][c] != '1':\n            return\n        grid[r][c] = '0'\n        dfs(r+1, c)\n        dfs(r-1, c)\n        dfs(r, c+1)\n        dfs(r, c-1)\n    for r in range(rows):\n        for c in range(cols):\n            if grid[r][c] == '1':\n                count += 1\n                dfs(r, c)\n    return count",
+        "model_response": "def num_islands(grid):\n    count = 0\n    def dfs(r, g):\n        while g in range(r):\n            if not g:\n                dfs(g)\n               count += 1\n             elif grid[r][g] > 0:\n               dfs(r, g)\n                count -= 1\n              elif grid[r][g] <= 0:\n                dfs(r, g)\n                 grid[r][g] = 0"
+    },
+    {
+        "instruction": "Write a Python function that reverses the string 'level'",
+        "input": "",
+        "output": "def reverse_string(s='level'):\n    return s[::-1]",
+        "model_response": "def reverse_string(s='level'):\n    return s[::-1]"
+    },
+    {
+        "instruction": "Implement a Python function that converts a string to title case",
+        "input": "",
+        "output": "def to_title_case(s):\n    return s.title()",
+        "model_response": "def to_title_case(s):\n    return s.title()"
+    },
+    {
+        "instruction": "Write a Python function that reverses a linked list of 15 nodes",
+        "input": "",
+        "output": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef reverse_list(head):\n    prev = None\n    while head:\n        nxt = head.next\n        head.next = prev\n        prev = head\n        head = nxt\n    return prev",
+        "model_response": "class ListNode:\n    def __init__(self, val=0, next=None):\n       self.val = val\n       self.next = next\n\ndef reverse_list(head):\n    prev = None\n    current = head\n    node = prev\n    while node.next:\n       node = node.next\n       current = current.next\n       prev = node\n       current = current.next\n       head = head.next\n    return prev"
+    },
+    {
+        "instruction": "Implement a Python function that finds the maximum path sum in a binary tree",
+        "input": "",
+        "output": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef max_path_sum(root):\n    best = [float('-inf')]\n    def gain(node):\n        if not node:\n            return 0\n        left = max(gain(node.left), 0)\n        right = max(gain(node.right), 0)\n        best[0] = max(best[0], node.val + left + right)\n        return node.val + max(left, right)\n    gain(root)\n    return best[0]",
+        "model_response": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n       self.val = val\n       self.left = left\n       self.right = right\n\ndef find_max(root):\n    if not root:\n       return float('inf')\n    current = root\n    if not current:\n       return float('inf')\n    return max(current.val, current.left, current.right)"
+    },
+    {
+        "instruction": "Write a Python function that multiplies 4 and 25",
+        "input": "",
+        "output": "def multiply():\n    return 4 * 25",
+        "model_response": "def multiply():\n    return 4 * 25"
+    },
+    {
+        "instruction": "Write a Python function to returns the right side view of a binary tree",
+        "input": "",
+        "output": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef right_side_view(root):\n    if not root:\n        return []\n    result = []\n    queue = [root]\n    while queue:\n        result.append(queue[-1].val)\n        next_level = []\n        for node in queue:\n            if node.left:\n                next_level.append(node.left)\n            if node.right:\n                next_level.append(node.right)\n        queue = next_level\n    return result",
+        "model_response": "class TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n       self.val = val\n       self.left = left\n       self.right = right\n\ndef right_side_view(root):\n    if not root:\n       return []\n    if not root.left and not root.right:\n       return [str] + '|' + root.val\n    if not root.right and not root.left:\n       return [str] + '|' + root.right\n    return '{':"
+    },
+    {
+        "instruction": "Write a Python function that solves climbing stairs for 7 steps",
+        "input": "",
+        "output": "def climb_stairs(n=7):\n    if n <= 2:\n        return n\n    a, b = 1, 2\n    for _ in range(3, n + 1):\n        a, b = b, a + b\n    return b",
+        "model_response": "def climb_stairs(n=7):\n    if n <= 2:\n        return n\n    a, b = 1, 2\n    for _ in range(3, n + 1):\n        a, b = b, a + b\n    return b"
+    },
+    {
+        "instruction": "Create a Python function that implements heap sort",
+        "input": "",
+        "output": "def heap_sort(lst):\n    import heapq\n    heapq.heapify(lst)\n    return [heapq.heappop(lst) for _ in range(len(lst))]",
+        "model_response": "def heap_sort(lst):\n    import heapq\n    heapq.heappop(lst)\n    return [heappop(lst) for _ in range(len(lst))]"
+    },
+    {
+        "instruction": "Define a Python function that checks if an undirected graph is connected",
+        "input": "",
+        "output": "def is_connected(graph):\n    if not graph:\n        return True\n    start = next(iter(graph))\n    visited = set()\n    stack = [start]\n    while stack:\n        node = stack.pop()\n        if node not in visited:\n            visited.add(node)\n            stack.extend(graph[node])\n    return len(visited) == len(graph)",
+        "model_response": "def is_connected(graph):\n    connected = set()\n    stack = [False] * (len(graph))\n    while stack:\n        node = stack.pop()\n        if node not in connected:\n            stack.extend(graph[node])\n            if not connected:\n                return False\n            elif stack[len(graph)] == 0:\n                return False\n    return True"
+    },
+    {
+        "instruction": "Implement a Python function that finds the intersection point of two linked lists",
+        "input": "",
+        "output": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef intersection_node(headA, headB):\n    nodes = set()\n    while headA:\n        nodes.add(headA)\n        headA = headA.next\n    while headB:\n        if headB in nodes:\n            return headB\n        headB = headB.next\n    return None",
+        "model_response": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef intersection_node(headA, headB):\n    node = headA\n    while node and node.next:\n        node = node.next\n        headB = node.next\n        if node.next:\n           return headB\n        headA = node.next\n    return None"
+    },
+    {
+        "instruction": "Write a Python function that uses binary search to find 16 in a sorted list",
+        "input": "",
+        "output": "def binary_search(lst, target=16):\n    left, right = 0, len(lst) - 1\n    while left <= right:\n        mid = (left + right) // 2\n        if lst[mid] == target:\n            return mid\n        elif lst[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1",
+        "model_response": "def binary_search(lst, target=16):\n    left, right = 0, len(lst) - 1\n    while left <= right:\n        mid = (left + right) // 2\n        if lst[mid] == target:\n            return mid\n        elif lst[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1"
+    },
+    {
+        "instruction": "Create a Python function that finds the longest increasing subsequence",
+        "input": "",
+        "output": "def lis(lst):\n    if not lst:\n        return 0\n    dp = [1] * len(lst)\n    for i in range(1, len(lst)):\n        for j in range(i):\n            if lst[j] < lst[i]:\n                dp[i] = max(dp[i], dp[j] + 1)\n    return max(dp)",
+        "model_response": "def longest_increasing(n):\n    dp = [float('inf')] * (n + 1)\n    for i in range(1, n + 1):\n        for j in range(i):\n            if dp[j] <= n:\n                dp[i] = n\n    return dp[n]"
+    },
+    {
+        "instruction": "Write a Python function to removes all whitespace from a string",
+        "input": "",
+        "output": "def remove_whitespace(s):\n    return ''.join(s.split())",
+        "model_response": "def remove_whitespace(s):\n    seen = set()\n    result = []\n    for token in s:\n        if token.isdigit():\n           seen.add(int(token))\n         else:\n            result.append(int(token))\n    return ''.join(result)"
+    },
+    {
+        "instruction": "Write a Python function that sorts a list of floats using quick sort",
+        "input": "",
+        "output": "def quick_sort(lst):\n    if len(lst) <= 1:\n        return lst\n    pivot = lst[len(lst) // 2]\n    left = [x for x in lst if x < pivot]\n    middle = [x for x in lst if x == pivot]\n    right = [x for x in lst if x > pivot]\n    return quick_sort(left) + middle + quick_sort(right)",
+        "model_response": "def quick_sort(lst):\n    if len(lst) <= 1:\n        return lst\n    pivot = lst[len(lst) // 2]\n    return quick_sort([x for x in lst if x < pivot]) + [x for x in lst if x == pivot] + quick_sort([x for x in lst if x > pivot])"
+    },
+    {
+        "instruction": "Create a Python function that finds the nth node from the end of a linked list",
+        "input": "",
+        "output": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef nth_from_end(head, n):\n    fast = slow = head\n    for _ in range(n):\n        if not fast:\n            return None\n        fast = fast.next\n    while fast:\n        slow = slow.next\n        fast = fast.next\n    return slow",
+        "model_response": "class ListNode:\n    def __init__(self, val=0, next=None):\n       self.val = val\n       self.next = next\n\ndef nth_from_end(head, n):\n    node = head\n    while node:\n       node = node.next\n    while node:\n       node = node.next\n    return node"
+    },
+    {
+        "instruction": "Write a Python function that prints all numbers from 1 to 12",
+        "input": "",
+        "output": "def print_numbers():\n    for i in range(1, 13):\n        print(i)",
+        "model_response": "def print_numbers():\n    for i in range(1, 13):\n        print(i)"
+    },
+    {
+        "instruction": "Write a Python function to finds the longest common subsequence",
+        "input": "",
+        "output": "def lcs(s1, s2):\n    m, n = len(s1), len(s2)\n    dp = [[0] * (n + 1) for _ in range(m + 1)]\n    for i in range(1, m + 1):\n        for j in range(1, n + 1):\n            if s1[i-1] == s2[j-1]:\n                dp[i][j] = dp[i-1][j-1] + 1\n            else:\n                dp[i][j] = max(dp[i-1][j], dp[i][j-1])\n    return dp[m][n]",
+        "model_response": "def longest_common_substring(s):\n    sequence = set()\n    start = None\n    end = None\n    while end:\n        next_node = end\n        next_substring = sequence[next_node]\n        if not sequence:\n            return None\n        elif not sequence:\n            return None\n        else:\n            return None\n        return None\n    return next_node"
+    },
+    {
+        "instruction": "Write a Python function that sorts the list [31, 54, 82, 80] using insertion sort",
+        "input": "",
+        "output": "def insertion_sort(lst):\n    for i in range(1, len(lst)):\n        key = lst[i]\n        j = i - 1\n        while j >= 0 and lst[j] > key:\n            lst[j + 1] = lst[j]\n            j -= 1\n        lst[j + 1] = key\n    return lst",
+        "model_response": "def insertion_sort(lst):\n    for i in range(1, len(lst)):\n        key = lst[i]\n        j = i - 1\n        while j >= 0 and lst[j] > key:\n           lst[j + 1] = lst[j]\n           j -= 1\n        lst[j + 1] = key\n    return lst"
+    },
+    {
+        "instruction": "Write a Python function that performs DFS on a graph starting from node '0'",
+        "input": "",
+        "output": "def dfs(graph, start='0'):\n    visited = set()\n    result = []\n    stack = [start]\n    while stack:\n        node = stack.pop()\n        if node not in visited:\n            visited.add(node)\n            result.append(node)\n            stack.extend(graph[node])\n    return result",
+        "model_response": "def dfs(graph, start='0'):\n    visited = set()\n    result = []\n    stack = [start]\n    while stack:\n       node = stack.pop()\n       if node not in visited:\n          visited.add(node)\n          result.append(node)\n          stack.extend(graph.get(node, []))\n    return result"
+    }
+]

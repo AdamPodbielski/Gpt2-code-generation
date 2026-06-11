@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Downloaded GPT-2 weights (large, re-downloadable)
+gpt2/
+*.ckpt
+*.pth
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.lnk
+.idea/
+.vscode/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
